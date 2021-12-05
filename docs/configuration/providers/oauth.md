@@ -79,21 +79,7 @@ Whenever you configure a custom or a built-in OAuth provider, you have the follo
 
 ```ts
 interface OAuthConfig {
-  /**
-   * OpenID Connect (OIDC) compliant providers can configure
-   * this instead of `authorize`/`token`/`userinfo` options
-   * without further configuration needed in most cases.
-   * You can still use the `authorize`/`token`/`userinfo`
-   * options for advanced control.
-   *
-   * [Authorization Server Metadata](https://datatracker.ietf.org/doc/html/rfc8414#section-3)
-   */
   wellKnown?: string
-  /**
-   * The login process will be initiated by sending the user to this URL.
-   *
-   * [Authorization endpoint](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1)
-   */
   authorization: EndpointHandler<AuthorizationParameters>
   /**
    * Endpoint that returns OAuth 2/OIDC tokens and information about them.
